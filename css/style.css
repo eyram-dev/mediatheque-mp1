@@ -1,0 +1,140 @@
+/* css/style.css - Médiathèque IPNET */
+
+/* ---------- Police (Google Fonts, nécessite Internet) ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* ---------- Couleurs (modifier ici pour changer le thème) ---------- */
+:root {
+    --rose: #e91e8c;
+    --violet: #7b2ff7;
+    --degrade: linear-gradient(90deg, var(--rose), var(--violet));
+    --couleur-claire: #f6e8fb;      /* fond des filtres */
+    --couleur-lien: #8a2be2;        /* liens */
+    --couleur-titre: #7b2ff7;       /* titres */
+}
+
+/* ---------- Base ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    background-color: #faf5fc;
+    color: #222;
+    line-height: 1.6;
+    text-align: center;
+}
+
+a {
+    color: var(--couleur-lien);
+}
+
+/* ---------- En-tête et navigation ---------- */
+header {
+    background: var(--degrade);
+    color: #fff;
+    padding: 20px 30px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Contenu principal ---------- */
+main {
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(123, 47, 247, 0.12);
+    text-align: center;
+}
+
+h2 {
+    color: var(--couleur-titre);
+    margin-top: 0;
+    font-weight: 600;
+}
+
+/* ---------- Tableau du catalogue ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px auto 0;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #e6d6f0;
+    text-align: center;
+}
+
+th {
+    background: var(--degrade);
+    color: #fff;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #faf5fc;
+}
+
+/* ---------- Filtres par catégorie ---------- */
+.filtres {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.filtres a {
+    display: inline-block;
+    padding: 6px 14px;
+    margin: 0 4px 6px;
+    background-color: var(--couleur-claire);
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.filtres a:hover,
+.filtres a.actif {
+    background: var(--degrade);
+    color: #fff;
+}
+
+/* ---------- Messages ---------- */
+.message-erreur {
+    padding: 12px;
+    background-color: #fde8e8;
+    border-left: 4px solid #c0392b;
+    color: #7b1f16;
+}
+
+/* ---------- Pied de page ---------- */
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #666;
+    font-size: 0.9rem;
+}
