@@ -5,7 +5,7 @@
  */
 
 /**
- * Génère la ligne HTML (<tr>) d'un livre pour le tableau du catalogue.
+ * Génère la carte HTML d'un livre pour le catalogue.
  * Toutes les données sont échappées avec htmlspecialchars().
  */
 function afficherLivre(array $livre): string
@@ -14,18 +14,19 @@ function afficherLivre(array $livre): string
     $titre      = htmlspecialchars($livre['titre']);
     $auteur     = htmlspecialchars($livre['auteur']);
     $annee      = htmlspecialchars((string) $livre['annee']);
-    $categorie  = htmlspecialchars($livre['categorie']);
+    $categorie  = htmlspecialchars(ucfirst($livre['categorie']));
     $prix       = number_format((float) $livre['prix'], 0, ',', ' ') . ' FCFA';
     $dispo      = $livre['disponible'] ? 'Disponible' : 'Indisponible';
+    $classe     = $livre['disponible'] ? 'oui' : 'non';
 
-    return "<tr>
-        <td><a href=\"detail.php?id=$id\">$titre</a></td>
-        <td>$auteur</td>
-        <td>$annee</td>
-        <td>$categorie</td>
-        <td>$prix</td>
-        <td>$dispo</td>
-    </tr>";
+    return "<article class=\"carte\">
+        <span class=\"badge-categorie\">$categorie</span>
+        <h3><a href=\"detail.php?id=$id\">$titre</a></h3>
+        <p class=\"auteur\">$auteur</p>
+        <p class=\"infos\">$annee &middot; $prix</p>
+        <span class=\"dispo $classe\">$dispo</span>
+        <a class=\"bouton\" href=\"detail.php?id=$id\">Voir le détail</a>
+    </article>";
 }
 
 /**

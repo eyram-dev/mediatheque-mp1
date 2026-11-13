@@ -53,23 +53,11 @@ require 'includes/header.php';
 <?php else : ?>
     <p><strong><?= count($livresAffiches) ?></strong> livre(s) affiché(s)</p>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Titre</th>
-                <th>Auteur</th>
-                <th>Année</th>
-                <th>Catégorie</th>
-                <th>Prix</th>
-                <th>Disponibilité</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($livresAffiches as $livre) : ?>
-                <?= afficherLivre($livre) ?>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+    <div class="grille">
+        <?php foreach ($livresAffiches as $livre) : ?>
+            <?= afficherLivre($livre) ?>
+        <?php endforeach; ?>
+    </div>
 <?php endif; ?>
 
 <?php require 'includes/footer.php'; ?>
