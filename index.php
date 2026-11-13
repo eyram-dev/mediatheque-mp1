@@ -15,7 +15,7 @@ require 'includes/header.php';
 ?>
 
 <h2>Bienvenue à la médiathèque IPNET</h2>
-<p>Découvrez notre catalogue de livres : romans, contes, informatique et histoire.</p>
+<p>Découvrez notre catalogue de livres : romans, contes, théâtre, poésie et essais.</p>
 
 <p>
     La médiathèque compte <strong><?= $totalLivres ?></strong> livres,

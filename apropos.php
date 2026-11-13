@@ -13,8 +13,8 @@ require 'includes/header.php';
 
 <p>
     La médiathèque IPNET met à disposition des étudiants et du personnel
-    une collection de livres variés : littérature, contes, ouvrages
-    techniques et histoire.
+    une collection de livres variés : littérature, contes, théâtre,
+    poésie et essais.
 </p>
 <p>
     Ce site est un premier projet réalisé en PHP, sans base de données :
